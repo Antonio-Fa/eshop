@@ -1,0 +1,44 @@
+.Card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 30%;
+    width: 20%;
+    margin: 15px;
+    padding: 2.5%;
+    background-color: blanchedalmond;
+    border: 2px solid black;
+    border-radius: 50px;
+
+    &_Img {
+        height: 55%;
+        width: 55%;
+        margin-bottom: 5%;
+        border: 2px solid black;
+        border-radius: 15px;
+    }
+
+    &_Name {
+        padding-bottom: 8%;
+
+        font-size: 2vw;
+        text-align: center;
+    }
+
+    &_Link {
+        font-weight: bold;
+        color: coral;
+        padding-top: 2%;
+        font-size: 1.2vw;
+    }
+
+    &_Price {
+        font-size: 1.5vw;
+    }
+
+    &_Stock {
+        font-size: 1.2vw;
+    }
+}

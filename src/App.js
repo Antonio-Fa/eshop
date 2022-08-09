@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import styles from "./global.scss";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import StockList from "./containers/StockList/StockList";
+import StockPage from "./containers/StockPage/StockPage";
+import Nav from "./components/Nav/Nav";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <Nav />
+            <Routes>
+                <Route
+                    path="/"
+                    element={
+                        <div class="Home">
+                            <h1>Board Game Store</h1>
+                            <div class="Home_grid">
+                                <StockList />
+                            </div>
+                        </div>
+                    }
+                ></Route>
+                <Route path="/products/:id" element={<StockPage />}></Route>
+                <Route path="/products/" element={<h1>Products</h1>}></Route>
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
