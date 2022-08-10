@@ -8,4 +8,11 @@
         width: 30vw;
         height: auto;
     }
+    &_Desc {
+        margin-top: 2%;
+        &_Para {
+            width: 80%;
+            padding-bottom: 10%;
+        }
+    }
 }

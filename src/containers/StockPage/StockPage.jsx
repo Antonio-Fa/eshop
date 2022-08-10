@@ -28,8 +28,8 @@ function StockPage() {
                     ></img>
                     <h2>${stock.price}</h2>
                     <h3>Left in stock: {stock.quantity}</h3>
-                    <h4>Description</h4>
-                    <p>{stock.desc}</p>
+                    <h4 className={styles.Product_Desc}>Description</h4>
+                    <p className={styles.Product_Desc_Para}>{stock.desc}</p>
                 </div>
             )}
         </>

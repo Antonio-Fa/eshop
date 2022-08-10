@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import styles from "./StockCard.module.scss";
 
 function StockCard(props) {
-    const { stock } = props;
+    const { stock, onWatchButton } = props;
 
     return (
         <div key={stock.id} className={styles.Card}>
@@ -16,6 +16,12 @@ function StockCard(props) {
             <h3 className={styles.Card_Price}>${stock.price}</h3>
 
             <p className={styles.Card_Stock}>Left in stock: {stock.quantity}</p>
+            <p>
+                Favourite -
+                <button onClick={() => onWatchButton(stock.id, stock.fave)}>
+                    Fave
+                </button>
+            </p>
 
             <NavLink className={styles.Card_Link} to={`/products/${stock.id}`}>
                 Product Info
