@@ -29,7 +29,9 @@ export const toggleFave = async (id, fave) => {
 
     if (product.fave === true) {
         await documentRef.update({ fave: false });
+        await documentRef.update({ faveDisplay: "X" });
     } else if (product.fave === false) {
         await documentRef.update({ fave: true });
+        await documentRef.update({ faveDisplay: "O" });
     }
 };

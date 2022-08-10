@@ -17,7 +17,7 @@ function ProductPage() {
 
     const onWatchButton = async (id, fave) => {
         await toggleFave(id, fave);
-        setClicks(clicks);
+        setClicks(clicks + 1);
     };
 
     return (

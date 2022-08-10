@@ -17,7 +17,8 @@ function StockCard(props) {
 
             <p className={styles.Card_Stock}>Left in stock: {stock.quantity}</p>
             <p>
-                Favourite -
+                Favourite - {stock.faveDisplay}
+                {""}
                 <button onClick={() => onWatchButton(stock.id, stock.fave)}>
                     Fave
                 </button>
