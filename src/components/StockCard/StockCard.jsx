@@ -16,10 +16,13 @@ function StockCard(props) {
             <h3 className={styles.Card_Price}>${stock.price}</h3>
 
             <p className={styles.Card_Stock}>Left in stock: {stock.quantity}</p>
-            <p>
+            <p className={styles.Card_Fave}>
                 Favourite - {stock.faveDisplay}
                 {""}
-                <button onClick={() => onWatchButton(stock.id, stock.fave)}>
+                <button
+                    className={styles.Card_Fave_Button}
+                    onClick={() => onWatchButton(stock.id, stock.fave)}
+                >
                     Fave
                 </button>
             </p>
