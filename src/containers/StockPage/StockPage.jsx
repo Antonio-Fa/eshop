@@ -3,15 +3,17 @@ import { useParams } from "react-router-dom";
 import { getStockById } from "../../services/stock";
 import styles from "./StockPage.module.scss";
 
-function StockPage(key) {
+function StockPage() {
+    const params = useParams();
+    const { id } = params;
     const [stock, setStock] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        getStockById(key)
+        getStockById(id)
             .then(setStock)
             .finally(() => setLoading(false));
-    }, [key]);
+    }, [id]);
 
     return (
         <>
