@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import StockPage from "./containers/StockPage/StockPage";
 import Nav from "./components/Nav/Nav";
 import ProductPage from "./containers/ProductPage/ProductPage";
-import Carousel from "./containers/Carousel/Carousel";
+import CarouselPage from "./containers/CarouselPage/CarouselPage";
 
 function App() {
     return (
@@ -19,7 +19,7 @@ function App() {
                         <div>
                             <h1>Board Game Store</h1>
                             <p>This will contain carousel</p>
-                            <div>{/* <Carousel /> */}</div>
+                            <div>{/* <CarouselPage /> */}</div>
                         </div>
                     }
                 ></Route>

@@ -16,22 +16,20 @@ export const getStockById = async (id) => {
     const collectionRef = firestore.collection("store-items");
     const documentRef = collectionRef.doc(id);
     const rawDoc = await documentRef.get();
+    console.log(rawDoc.data());
 
     return { id: rawDoc.id, ...rawDoc.data() };
 };
 
 export const toggleFave = async (id, fave) => {
     const collectionRef = firestore.collection("store-items");
-    const docRef = collectionRef.doc(id);
-    console.log({ fave });
+    const documentRef = collectionRef.doc(id);
+    const rawDoc = await documentRef.get();
+    const product = { ...rawDoc.data() };
 
-    let value = Object.values({ fave: fave });
-    let valueAccess = value[0];
-    console.log(valueAccess);
-
-    if (valueAccess === true) {
-        await docRef.update({ fave: false });
-    } else if (valueAccess === false) {
-        await docRef.update({ fave: true });
+    if (product.fave === true) {
+        await documentRef.update({ fave: false });
+    } else if (product.fave === false) {
+        await documentRef.update({ fave: true });
     }
 };
